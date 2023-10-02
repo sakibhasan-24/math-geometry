@@ -5,26 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Math</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
   </head>
   <body>
-    <main class="w-3/4 mx-auto mt-12">
-        <div class="grid grid-cols-1 lg:grid-cols-3">
-            <div class="border w-96  shadow-lg py-4 px-2 space-y-5">
-                <div>
-                    <img src="images/triangle.png" alt="triangle" class="px-6 ml-4" >
-                </div>
-                <div class="ml-12">
-                    <h1 class="text-2xl">Triangle</h1>
-                    <h2 class="text-3xl">formula : 0.5 X b X h</h2>
-                    <p>
-                        <input type="text" placeholder="b" class="outline w-[50px] mt-4 inline-block">
-                        <input type="text" placeholder="h" class="outline w-[50px] ml-8 mt-4">
-                    </p>
-                    <button class="py-2 rounded-lg px-6 bg-green-700 text-gray-800 text-2xl mt-5 text-center ml-14">Calculate</button>
-                </div>
-            </div>
+    <main class="w-3/4 md:w-[900px] lg:w-[1200px] mx-auto">
+      <h1 class="text-4xl font-bold mt-10 text-center">Area Calculation</h1>
+      <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 col-span-2">
+          <div class="shadow-lg w-72 space-y-4 px-4 py-2 mx-auto">
+            <img src="images/triangle.png" alt="images" class="w-full" />
+            <h1>Triangle</h1>
+            <p>Area:0.5 X b X h</p>
+            <h1 class="text-3xl">
+              Area : <span id="triangle-area">0 </span>cm<sup>2</sup>
+            </h1>
+            <input
+              type="text"
+              name=""
+              id="triangle-base"
+              placeholder="b"
+              class="w-10 border-2"
+            />
+            <span>cm</span>
+            <input
+              type="text"
+              name=""
+              id="triangle-height"
+              placeholder="h"
+              class="w-10 border-2"
+            />
+            <span>cm</span>
+            <button
+              onclick="calculateTriangle()"
+              class="bg-blue-500 text-white px-6 py-2 outline-none rounded-lg block mt-4"
+            >
+              Calculate
+            </button>
+          </div>
+          <div class="shadow-lg w-72 space-y-4 px-2 py-2 mx-auto">
+            <img src="images/rectangle.png" alt="images" class="w-full" />
+            <h1>Reactangle</h1>
+            <p>Area:w X l</p>
+            <h3 class="text-3xl">
+              Area : <span id="rectangle-area">0</span>cm<sup>2</sup>
+            </h3>
+            <input
+              type="text"
+              name=""
+              id="reactangle-width"
+              placeholder="W"
+              class="w-10 border-2"
+            />
+            <span>cm</span>
+            <input
+              type="text"
+              name=""
+              id="reactangle-length"
+              placeholder="l"
+              class="w-10 border-2"
+            />
+            <span>cm</span>
+            <button
+              onclick="rectangleArea()"
+              class="bg-blue-500 text-white px-6 py-2 outline-none rounded-lg block mt-4"
+            >
+              Calculate
+            </button>
+          </div>
+          <div class="shadow-lg w-72 space-y-4 px-4 py-2 mx-auto">
+            <img src="images/parallelogram.png" alt="images" class="w-full" />
+            <h1>parallelogram</h1>
+            <p>Area:b X h</p>
+            <h3 class="text-3xl">
+              Area : <span id="parallelogram-area">0</span>cm<sup>2</sup>
+            </h3>
+            <input
+              type="text"
+              name=""
+              id="parallelogram-base"
+              placeholder="b"
+              class="w-10 border-2"
+            />
+            <span>cm</span>
+            <input
+              type="text"
+              name=""
+              id="parallelogram-height"
+              placeholder="h"
+              class="w-10 border-2"
+            />
+            <span>cm</span>
+            <button
+              onclick="parallelogramArea()"
+              class="bg-blue-500 text-white px-6 py-2 outline-none rounded-lg block mt-4"
+            >
+              Calculate
+            </button>
+          </div>
         </div>
+        <div>
+          <h1>History</h1>
+          <div id="history"></div>
+        </div>
+      </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
